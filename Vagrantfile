@@ -20,6 +20,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # config.vm.box_check_update = false
   config.vm.provision :chef_solo do |chef|
     chef.cookbooks_path = ["cookbooks", "site-cookbooks"]
+    chef.data_bags_path = "data_bags"
     chef.add_recipe "base"
     chef.add_recipe "nvm"
     chef.add_recipe "nvm::grunt"
